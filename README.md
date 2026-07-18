@@ -1,46 +1,44 @@
-# Astro Starter Kit: Basics
+# Portfolio
 
-```sh
-npm create astro@latest -- --template basics
+Personal portfolio built with [Astro](https://astro.build) and [Tailwind CSS v4](https://tailwindcss.com).
+
+## Commands
+
+| Command | Action |
+|---------|--------|
+| `npm install` | Install dependencies |
+| `npm run dev` | Start dev server at `localhost:4321` |
+| `npm run build` | Build for production to `dist/` |
+| `npm run astro ...` | Run Astro CLI commands |
+
+## Stack
+
+- **Framework:** Astro 7 (static output)
+- **Styling:** Tailwind CSS v4 via `@tailwindcss/vite`
+- **Typography:** `@tailwindcss/typography` for prose styling
+- **Deploy:** Vercel (auto-deployed from `main` branch)
+
+## Project structure
+
+```
+src/
+├── content/
+│   └── projects/       # Markdown project entries
+├── components/         # Reusable UI components
+├── layouts/            # Page layouts
+├── pages/              # Route pages
+│   ├── index.astro
+│   ├── about.astro
+│   └── projects/
+│       └── [...slug].astro
+└── styles/
+    └── global.css      # Tailwind import + global styles
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Content
 
-## 🚀 Project Structure
+Project entries are markdown files in `src/content/projects/` with frontmatter for title, description, image, links, tags, and date. New projects can be added by creating a new `.md` file in that directory.
 
-Inside of your Astro project, you'll see the following folders and files:
+## Deploy
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Push to `main` → automatically deployed via Vercel.
