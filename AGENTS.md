@@ -1,22 +1,33 @@
-## Development
-
-When starting the dev server, use background mode:
+## Dev
 
 ```
 astro dev --background
+astro dev stop | status | logs
 ```
 
-Manage the background server with `astro dev stop`, `astro dev status`, and `astro dev logs`.
+Node >=22.12.0. No lint, typecheck, or test scripts configured.
 
-## Documentation
+## Deploy
 
-Full documentation: https://docs.astro.build
+Push to `main` → auto-deployed via Vercel (GitHub integration).  
+Adapter: `@astrojs/vercel` (static mode) configured in `astro.config.mjs`.  
+Build output: `dist/` → `.vercel/output/static`.
 
-Consult these guides before working on related tasks:
+## Tailwind v4
 
-- [Adding pages, dynamic routes, or middleware](https://docs.astro.build/en/guides/routing/)
-- [Working with Astro components](https://docs.astro.build/en/basics/astro-components/)
-- [Using React, Vue, Svelte, or other framework components](https://docs.astro.build/en/guides/framework-components/)
-- [Adding or managing content](https://docs.astro.build/en/guides/content-collections/)
-- [Adding styles or using Tailwind](https://docs.astro.build/en/guides/styling/)
-- [Supporting multiple languages](https://docs.astro.build/en/guides/internationalization/)
+Already wired via `@tailwindcss/vite`. Import syntax (not `@tailwind` directives):
+
+```css
+@import "tailwindcss";
+```
+
+## Content
+
+Collection `projects` defined in `src/content.config.ts` (Astro 7 — **not** `src/content/config.ts`).
+
+Loader: `glob()` from `astro/loaders` with `pattern` + `base`.  
+`getCollection` / `render` from `astro:content`; entry `.id` = slug (not `.slug`).
+
+Dynamic pages: `src/pages/projects/[...slug].astro`.
+
+Prose styling via `@tailwindcss/typography` wired with `@plugin` in `global.css`.
