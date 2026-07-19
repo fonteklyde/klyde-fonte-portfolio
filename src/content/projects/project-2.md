@@ -2,6 +2,9 @@
 title: "DevPath"
 description: "A web-based career guidance system built with ReactJS, Python, and Firebase that analyzes students’ academic records, technical assessments, and profile surveys to predict personalized IT career paths."
 image: "/images/devpath-landing-page.webp"
+gallery:
+    - "/images/devpath-career-matches.webp" 
+    - "/images/devpath-assessments.webp"
 liveUrl: "https://devpath-frontend.vercel.app/"
 tags: ["React.js", "Python", "Firebase"]
 date: "2025-11-01"

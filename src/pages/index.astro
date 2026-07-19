@@ -10,22 +10,28 @@ projects.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
 <Layout>
-  <Hero />
+  <div data-animate class="opacity-0">
+    <Hero />
+  </div>
 
   <section id="projects" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-    <h2 class="text-3xl font-bold text-gray-900 text-center">Projects</h2>
-    <p class="mt-2 text-center text-gray-600 max-w-lg mx-auto">
-      A few projects that showcase my approach to solving real problems.
-    </p>
+    <div data-animate class="opacity-0">
+      <h2 class="text-3xl font-bold text-gray-900 text-center">Projects</h2>
+      <p class="mt-2 text-center text-gray-600 max-w-lg mx-auto">
+        A few projects that showcase my approach to solving real problems.
+      </p>
+    </div>
 
     <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-      {projects.map((project, i) => (
-        <div class={`animate-fade-in delay-${Math.min(i + 1, 3)}`}>
+      {projects.map((project) => (
+        <div data-animate class="opacity-0">
           <ProjectCard project={project} />
         </div>
       ))}
     </div>
   </section>
 
-  <ContactForm />
+  <div data-animate class="opacity-0">
+    <ContactForm />
+  </div>
 </Layout>
