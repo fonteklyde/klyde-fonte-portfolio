@@ -1,0 +1,191 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const resumePath = "/klyde-fonte-resume.pdf";
+
+const summary =
+  "Full-Stack Developer specializing in scalable web applications, PHP/Laravel, React.js, ASP.NET Core, and database engineering. Experienced in architecting GPS geofencing & biometric facial verification systems, enterprise logistics platforms, and intelligent decision systems.";
+
+const experience = [
+  {
+    role: "Web Developer Intern",
+    company: "Infosoft",
+    period: "2026",
+    details: [
+      "Engineered Infosoft DTR System utilizing Laravel, Inertia.js, React, and Mapbox GL JS GPS geofencing.",
+      "Integrated TensorFlow.js client-side facial verification for real-time biometric attendance validation.",
+      "Implemented role-based analytics dashboards, automated email workflows, and GitHub productivity tracking.",
+    ],
+  },
+  {
+    role: "Data Analyst",
+    company: "Peroptyx",
+    period: "2025 — 2026",
+    details: [
+      "Evaluated search query data and mapping accuracy according to detailed quality specifications.",
+      "Optimized dataset relevance for local search engines and navigational routing algorithms.",
+    ],
+  },
+  {
+    role: "Lead Developer",
+    company: "DevPath Project",
+    period: "2025",
+    details: [
+      "Built an AI-assisted IT career guidance platform using React.js, Python analysis engine, and Firebase.",
+      "Designed dynamic diagnostic assessments and personalized career learning roadmaps for IT students.",
+    ],
+  },
+  {
+    role: "Full-Stack Systems Builder",
+    company: "LogiHub & Custom Enterprise Solutions",
+    period: "2024 — 2025",
+    details: [
+      "Built multi-tenant logistics platform LogiHub using ASP.NET Core MVC, C#, and SQL Server.",
+      "Developed Point-of-Sale (POS) & Inventory Systems and Barangay Resident Profiling Systems using Laravel & MySQL.",
+    ],
+  },
+];
+
+const education = [
+  {
+    degree: "Bachelor of Science in Information Technology",
+    institution: "University / Institute of Technology",
+    period: "2021 — 2025",
+    details:
+      "Focused on Full-Stack Web Development, Database Management, and Software Engineering Principles.",
+  },
+];
+
+const skills = {
+  languages: [
+    "PHP",
+    "JavaScript (ES6+)",
+    "TypeScript",
+    "C#",
+    "Python",
+    "SQL",
+    "HTML5/CSS3",
+  ],
+  frameworks: [
+    "Laravel",
+    "React.js",
+    "Inertia.js",
+    "ASP.NET Core",
+    "Tailwind CSS",
+    "Astro",
+  ],
+  databases: [
+    "PostgreSQL",
+    "MySQL",
+    "Microsoft SQL Server",
+    "Firebase Firestore",
+  ],
+  tools: [
+    "Git & GitHub",
+    "Mapbox GL JS",
+    "TensorFlow.js",
+    "Vercel",
+    "REST APIs",
+    "Docker",
+  ],
+};
+---
+
+<Layout
+  title="Resume — Klyde Dexter Fonte"
+  description="View and download the professional resume of Klyde Dexter Fonte, Full-Stack Developer specializing in React, Laravel, and ASP.NET Core."
+>
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+    <!-- Top Action Banner -->
+    <div
+      data-animate
+      class="opacity-0 bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-6 mb-12"
+    >
+      <div>
+        <span
+          class="text-xs font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 border border-indigo-100 px-3 py-1 rounded-full"
+        >
+          Curriculum Vitae
+        </span>
+        <h1
+          class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mt-2"
+        >
+          Klyde Dexter Fonte
+        </h1>
+        <p class="text-sm font-semibold text-slate-600 mt-1">
+          Full-Stack Developer • Philippines
+        </p>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-3 w-full sm:w-auto shrink-0">
+        <a
+          href={resumePath}
+          download="Klyde-Dexter-Fonte-Resume.pdf"
+          class="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-6 py-3 bg-slate-900 text-white font-semibold text-sm rounded-xl hover:bg-indigo-600 transition-all shadow-sm group"
+        >
+          <svg
+            class="w-4 h-4 group-hover:translate-y-0.5 transition-transform"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+            ></path>
+          </svg>
+          Download PDF
+        </a>
+
+        <a
+          href={resumePath}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-6 py-3 bg-white border border-slate-300 text-slate-800 font-semibold text-sm rounded-xl hover:bg-slate-50 transition-all"
+        >
+          <svg
+            class="w-4 h-4 text-slate-500"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+            ></path>
+          </svg>
+          Open PDF in Tab ↗
+        </a>
+      </div>
+    </div>
+
+    <!-- PDF Embedded Viewer (Desktop) -->
+    <div data-animate class="opacity-0 mb-12 hidden md:block">
+      <div class="flex items-center justify-between mb-3 px-1">
+        <h2 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+          <span>📄</span> PDF Preview
+        </h2>
+        <span class="text-xs text-slate-400"
+          >Scroll inside frame to view all pages</span
+        >
+      </div>
+      <div
+        class="w-full h-[800px] rounded-2xl overflow-hidden border border-slate-200 shadow-md bg-slate-800"
+      >
+        <iframe
+          src={`${resumePath}#toolbar=0`}
+          class="w-full h-full border-none"
+          title="Klyde Dexter Fonte Resume PDF"
+        >
+          <p class="p-6 text-white text-center"> Your browser does not support
+          embedded PDFs. <a href={resumePath} download class="underline
+          font-bold text-indigo-400">Click here to download the PDF</a>. </p>
+        </iframe>
+      </div>
+    </div>
+  </div>
+</Layout>

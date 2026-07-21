@@ -1,30 +1,257 @@
 ---
+import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
+import EducationCard from "../components/EducationCard.astro";
+import CertificationCard from "../components/CertificationCard.astro";
+
+const educationList = await getCollection("education");
+educationList.sort((a, b) => a.data.order - b.data.order);
+
+const certificationsList = await getCollection("certifications");
+certificationsList.sort((a, b) => a.data.order - b.data.order);
+
+const skillCategories = [
+  {
+    category: "Frontend Development",
+    skills: [
+      "React.js",
+      "Inertia.js",
+      "JavaScript (ES6+)",
+      "Tailwind CSS",
+      "HTML5 & CSS3",
+      "Responsive Design",
+    ],
+  },
+  {
+    category: "Backend Development",
+    skills: [
+      "PHP / Laravel",
+      "C# / ASP.NET Core",
+      "Python",
+      "RESTful APIs",
+      "Authentication & RBAC",
+    ],
+  },
+  {
+    category: "Databases & Storage",
+    skills: [
+      "PostgreSQL",
+      "MySQL",
+      "Microsoft SQL Server",
+      "Firebase Firestore",
+    ],
+  },
+  {
+    category: "Tools & Integrations",
+    skills: [
+      "Git & GitHub",
+      "Mapbox GL JS",
+      "TensorFlow.js",
+      "Vercel",
+      "Vite & Astro",
+    ],
+  },
+];
+
+const milestones = [
+  {
+    period: "2026",
+    role: "Web Developer Intern — Infosoft",
+    description:
+      "Architected and deployed the Infosoft DTR System utilizing Laravel, Inertia.js, React, Mapbox GL JS geofencing, and TensorFlow.js facial recognition for automated biometric timekeeping.",
+  },
+  {
+    period: "2025-2026",
+    role: "Data Analyst — Peroptyx",
+    description:
+      "Evaluated and rated search query results using proprietary guidelines, directly improving map routing accuracy and local search relevance for end-users.",
+  },
+  {
+    period: "2025",
+    role: "Frontend Developer — DevPath Career Guidance Platform",
+    description:
+      "Designed a React & Python web application analyzing student academic datasets to deliver personalized career recommendations and technical roadmaps.",
+  },
+  {
+    period: "2024-2025",
+    role: "Full-Stack Systems Builder",
+    description:
+      "Engineered multi-tenant enterprise logistics platform LogiHub (ASP.NET Core/SQL Server), integrated POS/IMS store management systems (Laravel/MySQL), and created Barangay Profiling System (Laravel/PHP).",
+  },
+];
 ---
 
-<Layout title="About — Klyde Dexter Fonte">
-  <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-    <div data-animate class="opacity-0">
-      <h1 class="text-4xl font-bold text-gray-900">About Me</h1>
+<Layout
+  title="About Me — Klyde Dexter Fonte"
+  description="Learn more about Klyde Dexter Fonte's background, education, technical skills, certifications, and experience as a Full-Stack Developer."
+>
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+    <!-- Header -->
+    <div data-animate class="opacity-0 max-w-2xl">
+      <span
+        class="text-xs font-bold uppercase tracking-widest text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full border border-indigo-100"
+      >
+        About Me
+      </span>
+      <h1
+        class="mt-4 text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight"
+      >
+        Driven by Curiosity. Focused on Results.
+      </h1>
     </div>
 
-    <div data-animate class="mt-8 space-y-6 text-gray-600 leading-relaxed opacity-0">
-      <p>I didn't start out as a developer—I started out as a tinkerer.</p>
-      <p>
-        Growing up, I was the kid who took apart remote controls just to see how
-        they worked. That curiosity eventually led me to a keyboard, where I
-        discovered that code is the ultimate toolkit for creation. Today, I’m a
-        developer who thrives on untangling complex logic and turning abstract
-        ideas into fluid, interactive experiences.
-      </p>
-      <p>
-        For me, development isn't just about writing functions; it's about
-        crafting tools that make people's lives easier. Whether I'm optimizing a
-        database query that shaves milliseconds off load times or designing a UI
-        that feels intuitive on the first click, I believe that great software
-        is invisible—it just works. When I’m not debugging, you’ll find me
-        gaming, watching movies or tv shows, or going to the gym.
-      </p>
+    <!-- Personal Story -->
+    <div
+      data-animate
+      class="mt-8 opacity-0 grid gap-8 md:grid-cols-3 items-start"
+    >
+      <div
+        class="md:col-span-2 space-y-5 text-slate-600 text-base sm:text-lg leading-relaxed"
+      >
+        <p class="font-medium text-slate-900">
+          I didn't start out as a developer — I started out as a tinkerer.
+        </p>
+        <p>
+          Growing up, I was the kid who took apart remote controls and gadgets
+          just to see how they worked. That innate curiosity eventually led me
+          to a keyboard, where I discovered that code is the ultimate toolkit
+          for creation.
+        </p>
+        <p>
+          Today, I’m a Full-Stack Developer who thrives on untangling complex
+          logic and turning abstract requirements into robust, intuitive
+          software applications. For me, development isn't just about writing
+          functions; it's about crafting tools that make people's lives easier
+          and businesses run smoother.
+        </p>
+        <p>
+          Whether I'm optimizing database queries to shave milliseconds off load
+          times, implementing client-side AI models, or crafting clean user
+          interfaces, I believe that great software should feel effortless for
+          the end user.
+        </p>
+      </div>
+
+      <!-- Quick Facts Sidebar -->
+      <div
+        class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4"
+      >
+        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400">
+          Quick Snapshot
+        </h3>
+        <ul class="space-y-3 text-sm">
+          <li class="flex items-center gap-2 text-slate-700">
+            <span class="text-indigo-600 font-bold">📍</span> Location: Philippines
+          </li>
+          <li class="flex items-center gap-2 text-slate-700">
+            <span class="text-indigo-600 font-bold">💻</span> Focus: Full-Stack Web
+            Development
+          </li>
+          <li class="flex items-center gap-2 text-slate-700">
+            <span class="text-indigo-600 font-bold">⚡</span> Core Stack: Laravel,
+            React, ASP.NET, MySQL/Postgres
+          </li>
+          <li class="flex items-center gap-2 text-slate-700">
+            <span class="text-indigo-600 font-bold">🎮</span> Hobbies: Gaming, Movies,
+            Gym
+          </li>
+        </ul>
+
+        <div class="pt-2 border-t border-slate-100">
+          <a
+            href="/#contact"
+            class="block w-full text-center px-4 py-2.5 bg-slate-900 text-white font-semibold text-xs rounded-xl hover:bg-indigo-600 transition-colors"
+          >
+            Get in Touch
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Education Section -->
+    <div data-animate class="mt-16 opacity-0">
+      <h2
+        class="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-2"
+      >
+        <span class="w-3 h-3 rounded-full bg-indigo-600"></span>
+        Education & Academic Background
+      </h2>
+
+      <div class="mt-6">
+        {educationList.map((edu) => <EducationCard education={edu} />)}
+      </div>
+    </div>
+
+    <!-- Certifications Section -->
+    <div data-animate class="mt-16 opacity-0">
+      <h2
+        class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2"
+      >
+        <span class="w-3 h-3 rounded-full bg-indigo-600"></span>
+        Certifications & Professional Credentials
+      </h2>
+
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {certificationsList.map((cert) => (
+          <CertificationCard certification={cert} />
+        ))}
+      </div>
+    </div>
+
+    <!-- Skills & Tech Matrix -->
+    <div data-animate class="mt-16 opacity-0">
+      <h2
+        class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2"
+      >
+        <span class="w-3 h-3 rounded-full bg-indigo-600"></span>
+        Technical Stack & Expertise
+      </h2>
+
+      <div class="grid gap-6 sm:grid-cols-2">
+        {
+          skillCategories.map((cat) => (
+            <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-slate-300 transition-colors">
+              <h3 class="text-base font-bold text-slate-900 mb-3">
+                {cat.category}
+              </h3>
+              <div class="flex flex-wrap gap-2">
+                {cat.skills.map((skill) => (
+                  <span class="text-xs font-medium text-slate-700 bg-slate-100 border border-slate-200/80 px-3 py-1.5 rounded-lg">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Experience & Milestones Timeline -->
+    <div data-animate class="mt-16 opacity-0">
+      <h2
+        class="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-2"
+      >
+        <span class="w-3 h-3 rounded-full bg-indigo-600"></span>
+        Experience & Key Milestones
+      </h2>
+
+      <div class="relative pl-6 border-l-2 border-slate-200 space-y-8">
+        {
+          milestones.map((m) => (
+            <div class="relative group">
+              <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-white border-2 border-indigo-600 group-hover:bg-indigo-600 transition-colors" />
+              <span class="text-xs font-bold text-indigo-600 uppercase tracking-wide">
+                {m.period}
+              </span>
+              <h3 class="text-lg font-bold text-slate-900 mt-1">{m.role}</h3>
+              <p class="mt-2 text-slate-600 text-sm sm:text-base leading-relaxed">
+                {m.description}
+              </p>
+            </div>
+          ))
+        }
+      </div>
     </div>
   </section>
 </Layout>

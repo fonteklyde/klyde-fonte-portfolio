@@ -1,0 +1,56 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+export interface Props {
+  education: CollectionEntry<'education'>;
+}
+
+const { education } = Astro.props;
+const { data } = education;
+---
+
+<div class="relative pl-8 pb-8 group last:pb-0">
+  <!-- Timeline vertical connector line -->
+  <div class="absolute left-3 top-3 bottom-0 w-0.5 bg-slate-200 group-last:hidden"></div>
+
+  <!-- Timeline node icon -->
+  <div class="absolute left-0 top-1.5 w-6.5 h-6.5 rounded-full bg-white border-2 border-indigo-600 flex items-center justify-center shadow-xs group-hover:bg-indigo-600 transition-colors">
+    <svg class="w-3.5 h-3.5 text-indigo-600 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z" />
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 01-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+    </svg>
+  </div>
+
+  <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs hover:border-slate-300 transition-all">
+    <div class="flex flex-wrap items-center justify-between gap-2">
+      <span class="text-xs font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full border border-indigo-100">
+        {data.period}
+      </span>
+      <span class="text-xs font-medium text-slate-500 flex items-center gap-1">
+        📍 {data.location}
+      </span>
+    </div>
+
+    <h3 class="text-xl font-bold text-slate-900 mt-3">{data.degree}</h3>
+    <p class="text-sm font-semibold text-slate-700 mt-1">{data.institution}</p>
+
+    {data.description && (
+      <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+        {data.description}
+      </p>
+    )}
+
+    {data.highlights && data.highlights.length > 0 && (
+      <div class="mt-4 pt-4 border-t border-slate-100">
+        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Key Focus Areas</h4>
+        <div class="flex flex-wrap gap-1.5">
+          {data.highlights.map((h) => (
+            <span class="text-xs font-medium text-slate-700 bg-slate-100 px-2.5 py-1 rounded-md">
+              {h}
+            </span>
+          ))}
+        </div>
+      </div>
+    )}
+  </div>
+</div>
