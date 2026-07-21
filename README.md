@@ -1,44 +1,98 @@
-# Portfolio
+# Klyde Dexter Fonte — Developer Portfolio
 
-Personal portfolio built with [Astro](https://astro.build) and [Tailwind CSS v4](https://tailwindcss.com).
+Personal developer portfolio built with [Astro 7](https://astro.build) and [Tailwind CSS v4](https://tailwindcss.com), featuring interactive project filtering, deep case studies, content collections for education and certifications, and an embedded resume viewer.
 
-## Commands
+---
+
+## 🚀 Key Features
+
+- **⚡ Fast Static Site Generation**: Built with Astro 7 static output for ultra-fast page load speeds and SEO efficiency.
+- **🎨 Modern Design System**: Tailwind CSS v4 styling with `@tailwindcss/vite`, custom `@theme` fonts (*Plus Jakarta Sans* headings & *Inter* body), ambient radial glows, and responsive layout primitives.
+- **📁 Content Collections**:
+  - **Projects (`src/content/projects/`)**: Detailed Markdown case studies with key features, architecture decisions, tag metadata, and screenshot galleries.
+  - **Education (`src/content/education/`)**: Structured JSON data files for academic degrees, institutions, and key focus areas.
+  - **Certifications (`src/content/certifications/`)**: Structured JSON entries for professional credentials with badge images, issue dates, and verification links.
+- **🔍 Interactive Project Tag Filtering**: Filter projects instantly on the home page by tech stack (Laravel, React, ASP.NET, Python) without page reloads.
+- **📄 Viewable & Downloadable Resume (`/resume`)**:
+  - Embedded responsive PDF viewer frame.
+  - Structured, accessible Web Resume view for mobile screens and screen readers.
+  - Direct PDF download and tab view actions (`public/klyde-fonte-resume.pdf`).
+- **📱 Responsive Mobile Navigation**: Sticky glassmorphism navbar with a smooth mobile hamburger drawer menu.
+- **✉️ Asynchronous Contact Form**: Formspree integration with client-side `fetch()` submission, loading spinner button state, and inline success/error alert banners.
+- **🌐 SEO & Social Sharing**: Full Open Graph tags, Twitter Card metadata, canonical links, and `public/robots.txt`.
+
+---
+
+## 🛠️ Project Structure
+
+```text
+klyde-fonte-portfolio/
+├── public/
+│   ├── favicon.ico
+│   ├── favicon.svg
+│   ├── robots.txt
+│   ├── klyde-fonte-resume.pdf       # Downloadable & Viewable Resume PDF
+│   └── images/                      # Project, headshot, & certificate images
+├── src/
+│   ├── components/                  # Reusable UI components
+│   │   ├── Navbar.astro             # Sticky header with mobile drawer
+│   │   ├── Footer.astro             # Footer with copyright & social links
+│   │   ├── Hero.astro               # Hero banner with status indicator
+│   │   ├── ProjectCard.astro        # Project card with tag data attributes
+│   │   ├── EducationCard.astro      # Education timeline card
+│   │   ├── CertificationCard.astro  # Certification badge card with images
+│   │   └── ContactForm.astro        # Async Formspree contact form
+│   ├── content/                     # Data & Markdown content entries
+│   │   ├── projects/                # Markdown case study entries (*.md)
+│   │   ├── education/               # Education JSON entries (*.json)
+│   │   └── certifications/          # Certification JSON entries (*.json)
+│   ├── content.config.ts            # Astro 7 Content Collections config
+│   ├── layouts/
+│   │   └── Layout.astro             # Global HTML layout, Google Fonts, & OG metadata
+│   ├── pages/                       # File-based routes
+│   │   ├── index.astro              # Home page with project filter & credentials
+│   │   ├── about.astro              # About page with skills matrix & timeline
+│   │   ├── resume.astro             # Resume page with PDF viewer & web view
+│   │   └── projects/
+│   │       └── [...slug].astro      # Dynamic project case study pages
+│   └── styles/
+│       └── global.css               # Tailwind v4 import & theme definitions
+├── astro.config.mjs                 # Astro configuration (@astrojs/vercel adapter)
+└── package.json
+```
+
+---
+
+## 💻 Commands
 
 | Command | Action |
-|---------|--------|
-| `npm install` | Install dependencies |
-| `npm run dev` | Start dev server at `localhost:4321` |
-| `npm run build` | Build for production to `dist/` |
-| `npm run astro ...` | Run Astro CLI commands |
+| :--- | :--- |
+| `npm install` | Install all dependencies |
+| `npm run dev` | Start local development server at `http://localhost:4321` |
+| `npm run build` | Build static production bundle into `dist/` |
+| `npm run preview` | Preview production build locally |
 
-## Stack
+---
 
-- **Framework:** Astro 7 (static output)
-- **Styling:** Tailwind CSS v4 via `@tailwindcss/vite`
-- **Typography:** `@tailwindcss/typography` for prose styling
-- **Deploy:** Vercel (auto-deployed from `main` branch)
+## 📝 Managing Content
 
-## Project structure
+### Adding a Project
+1. Create a new `.md` file in `src/content/projects/` (e.g. `my-new-project.md`).
+2. Include frontmatter fields: `title`, `description`, `image`, `gallery`, `liveUrl`, `githubUrl`, `tags`, `date`, `featured`.
+3. Add markdown content under the frontmatter for the detailed case study.
 
-```
-src/
-├── content/
-│   └── projects/       # Markdown project entries
-├── components/         # Reusable UI components
-├── layouts/            # Page layouts
-├── pages/              # Route pages
-│   ├── index.astro
-│   ├── about.astro
-│   └── projects/
-│       └── [...slug].astro
-└── styles/
-    └── global.css      # Tailwind import + global styles
-```
+### Adding an Education Entry
+1. Create a new `.json` file in `src/content/education/` (e.g. `degree.json`).
+2. Add JSON fields: `degree`, `institution`, `location`, `period`, `description`, `highlights`, `order`.
 
-## Content
+### Adding a Certification
+1. Create a new `.json` file in `src/content/certifications/` (e.g. `cert-name.json`).
+2. Add JSON fields: `title`, `issuer`, `issueDate`, `image` *(optional)*, `credentialId`, `credentialUrl`, `skills`, `order`.
 
-Project entries are markdown files in `src/content/projects/` with frontmatter for title, description, image, links, tags, and date. New projects can be added by creating a new `.md` file in that directory.
+---
 
-## Deploy
+## 🚀 Deployment
 
-Push to `main` → automatically deployed via Vercel.
+This portfolio is configured for **static deployment on Vercel** using `@astrojs/vercel`:
+- Push changes to the `main` branch to trigger auto-deployment on Vercel.
+- Build output path: `dist/` mapped to `.vercel/output/static`.
