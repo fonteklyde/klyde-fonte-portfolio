@@ -77,14 +77,12 @@ const resumePath = "/klyde-fonte-resume.pdf";
     </div>
 
     <!-- PDF Embedded Viewer -->
-    <div data-animate class="opacity-0 mb-12 hidden md:block">
+    <div data-animate class="opacity-0 mb-12">
       <div class="flex items-center justify-between mb-3 px-1">
         <h2 class="text-lg font-bold text-slate-900 flex items-center gap-2">
           <span>📄</span> PDF Preview
         </h2>
-        <span class="text-xs text-slate-400"
-          >Scroll inside frame to view all pages</span
-        >
+        <span class="text-xs text-slate-400">Scroll inside frame to view all pages</span>
       </div>
       <div
         class="w-full h-[800px] rounded-2xl overflow-hidden border border-slate-200 shadow-md bg-slate-800"
@@ -94,9 +92,12 @@ const resumePath = "/klyde-fonte-resume.pdf";
           class="w-full h-full border-none"
           title="Klyde Dexter Fonte Resume PDF"
         >
-          <p class="p-6 text-white text-center"> Your browser does not support
-          embedded PDFs. <a href={resumePath} download class="underline
-          font-bold text-indigo-400"> Click here to download the PDF </a>. </p>
+          <p class="p-6 text-white text-center">
+            Your browser does not support embedded PDFs.
+            <a href={resumePath} download class="underline font-bold text-indigo-400">
+              Click here to download the PDF
+            </a>.
+          </p>
         </iframe>
       </div>
     </div>
