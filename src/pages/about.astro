@@ -42,6 +42,16 @@ const skillCategories = [
     ],
   },
   {
+    category: "Data Mining & Analytics",
+    skills: [
+      "Python & R",
+      "Exploratory Data Analysis (EDA)",
+      "Data Preprocessing",
+      "Data Visualization",
+      "Predictive Modeling",
+    ],
+  },
+  {
     category: "Tools & Integrations",
     skills: [
       "Git & GitHub",
@@ -56,7 +66,7 @@ const skillCategories = [
 const milestones = [
   {
     period: "2026",
-    role: "Web Developer Intern — Infosoft",
+    role: "Web Developer Intern — Infosoft Consulting Corporation",
     description:
       "Architected and deployed the Infosoft DTR System utilizing Laravel, Inertia.js, React, Mapbox GL JS geofencing, and TensorFlow.js facial recognition for automated biometric timekeeping.",
   },
@@ -83,7 +93,7 @@ const milestones = [
 
 <Layout
   title="About Me — Klyde Dexter Fonte"
-  description="Learn more about Klyde Dexter Fonte's background, education, technical skills, certifications, and experience as a Full-Stack Developer."
+  description="Learn more about Klyde Dexter Fonte's background, education, technical skills, certifications, and experience as a Full-Stack Developer and Data Mining Specialist/Analyst."
 >
   <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
     <!-- Header -->
@@ -109,26 +119,27 @@ const milestones = [
         class="md:col-span-2 space-y-5 text-slate-600 text-base sm:text-lg leading-relaxed"
       >
         <p class="font-medium text-slate-900">
-          I didn't start out as a developer — I started out as a tinkerer.
+          I bridge the gap between building powerful web applications and
+          extracting meaningful insights from data.
         </p>
         <p>
-          Growing up, I was the kid who took apart remote controls and gadgets
-          just to see how they worked. That innate curiosity eventually led me
-          to a keyboard, where I discovered that code is the ultimate toolkit
-          for creation.
+          Growing up, I was always curious about how systems worked, which
+          naturally led me to programming. Over time, that curiosity evolved: I
+          wanted to not only build systems that collect data but also understand
+          the stories that datasets have to tell.
         </p>
         <p>
-          Today, I’m a Full-Stack Developer who thrives on untangling complex
-          logic and turning abstract requirements into robust, intuitive
-          software applications. For me, development isn't just about writing
-          functions; it's about crafting tools that make people's lives easier
-          and businesses run smoother.
+          Today, I am a Full-Stack Developer and Data Mining Specialist/Analyst.
+          I thrive on designing, building, and deploying end-to-end web
+          applications using modern stacks like Laravel, React, and .NET Core,
+          while also utilizing Python and R to clean, analyze, and build
+          predictive models from complex datasets.
         </p>
         <p>
-          Whether I'm optimizing database queries to shave milliseconds off load
-          times, implementing client-side AI models, or crafting clean user
-          interfaces, I believe that great software should feel effortless for
-          the end user.
+          Whether I'm optimizing database queries, implementing predictive
+          features, or crafting clean user interfaces, I believe in shipping
+          secure, scalable, and data-driven solutions that solve real-world
+          problems.
         </p>
       </div>
 
@@ -144,12 +155,12 @@ const milestones = [
             <span class="text-indigo-600 font-bold">📍</span> Location: Philippines
           </li>
           <li class="flex items-center gap-2 text-slate-700">
-            <span class="text-indigo-600 font-bold">💻</span> Focus: Full-Stack Web
-            Development
+            <span class="text-indigo-600 font-bold">💻</span> Focus: Full-Stack Dev
+            & Data Mining
           </li>
           <li class="flex items-center gap-2 text-slate-700">
             <span class="text-indigo-600 font-bold">⚡</span> Core Stack: Laravel,
-            React, ASP.NET, MySQL/Postgres
+            React, .NET Core, Python, R
           </li>
           <li class="flex items-center gap-2 text-slate-700">
             <span class="text-indigo-600 font-bold">🎮</span> Hobbies: Gaming, Movies,
@@ -192,9 +203,11 @@ const milestones = [
       </h2>
 
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {certificationsList.map((cert) => (
-          <CertificationCard certification={cert} />
-        ))}
+        {
+          certificationsList.map((cert) => (
+            <CertificationCard certification={cert} />
+          ))
+        }
       </div>
     </div>
 

@@ -1,6 +1,6 @@
-# Klyde Dexter Fonte — Developer Portfolio
+# Klyde Dexter Fonte — Full-Stack Developer & Data Mining Specialist/Analyst Portfolio
 
-Personal developer portfolio built with [Astro 7](https://astro.build) and [Tailwind CSS v4](https://tailwindcss.com), featuring interactive project filtering, deep case studies, content collections for education and certifications, and an embedded resume viewer.
+Personal developer portfolio built with [Astro 7](https://astro.build) and [Tailwind CSS v4](https://tailwindcss.com), showcasing expertise in full-stack web development (Laravel, React, .NET Core) and data mining / predictive analytics (Python, R). Features interactive project filtering, detailed case studies, content collections, and an embedded resume viewer.
 
 ---
 
@@ -12,7 +12,7 @@ Personal developer portfolio built with [Astro 7](https://astro.build) and [Tail
   - **Projects (`src/content/projects/`)**: Detailed Markdown case studies with key features, architecture decisions, tag metadata, and screenshot galleries.
   - **Education (`src/content/education/`)**: Structured JSON data files for academic degrees, institutions, and key focus areas.
   - **Certifications (`src/content/certifications/`)**: Structured JSON entries for professional credentials with badge images, issue dates, and verification links.
-- **🔍 Interactive Project Tag Filtering**: Filter projects instantly on the home page by tech stack (Laravel, React, ASP.NET, Python) without page reloads.
+- **🔍 Interactive Project Tag Filtering**: Filter projects instantly on the home page by tech stack (Laravel, React, ASP.NET, Python, R, Machine Learning) without page reloads.
 - **📄 Viewable & Downloadable Resume (`/resume`)**:
   - Embedded responsive PDF viewer frame.
   - Structured, accessible Web Resume view for mobile screens and screen readers.
