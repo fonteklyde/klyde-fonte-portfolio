@@ -1,13 +1,16 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import BreadcrumbSchema from "../components/SEO/BreadcrumbSchema.astro";
 
 const resumePath = "/klyde-fonte-resume.pdf";
 ---
 
 <Layout
-  title="Resume — Klyde Dexter Fonte"
-  description="View and download the professional resume of Klyde Dexter Fonte, Full-Stack Developer specializing in React, Laravel, and ASP.NET Core."
+  title="Resume & CV — Klyde Dexter Fonte | Full-Stack Developer"
+  description="View and download the professional resume and CV of Klyde Dexter Fonte, Full-Stack Developer & Data Mining Specialist in the Philippines."
 >
+  <BreadcrumbSchema pageName="Resume" pageUrl="/resume" slot="json-ld" />
+
   <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
     <!-- Top Action Banner -->
     <div

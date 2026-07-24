@@ -3,6 +3,8 @@ import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import EducationCard from "../components/EducationCard.astro";
 import CertificationCard from "../components/CertificationCard.astro";
+import PersonSchema from "../components/SEO/PersonSchema.astro";
+import BreadcrumbSchema from "../components/SEO/BreadcrumbSchema.astro";
 
 const educationList = await getCollection("education");
 educationList.sort((a, b) => a.data.order - b.data.order);
@@ -92,9 +94,14 @@ const milestones = [
 ---
 
 <Layout
-  title="About Me — Klyde Dexter Fonte"
-  description="Learn more about Klyde Dexter Fonte's background, education, technical skills, certifications, and experience as a Full-Stack Developer and Data Mining Specialist/Analyst."
+  title="About Klyde Dexter Fonte — Full-Stack Developer & Data Mining Specialist"
+  description="Learn more about Klyde Dexter Fonte's background, education, technical skills, certifications, and experience as a Full-Stack Developer and Data Mining Specialist in the Philippines."
 >
+  <Fragment slot="json-ld">
+    <PersonSchema />
+    <BreadcrumbSchema pageName="About Me" pageUrl="/about" />
+  </Fragment>
+
   <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
     <!-- Header -->
     <div data-animate class="opacity-0 max-w-2xl">

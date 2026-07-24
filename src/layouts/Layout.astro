@@ -7,15 +7,32 @@ export interface Props {
   title?: string;
   description?: string;
   image?: string;
+  type?: "website" | "article";
+  publishedDate?: string;
+  keywords?: string[];
 }
 
 const {
-  title = "Klyde Dexter Fonte — Full-Stack Developer",
-  description = "Personal portfolio of Klyde Dexter Fonte, a Full-Stack Developer specializing in scalable web applications, React, Laravel, ASP.NET, and clean architectures.",
-  image = "/images/1.webp"
+  title = "Klyde Dexter Fonte — Full-Stack Developer & Data Mining Specialist",
+  description = "Portfolio of Klyde Dexter Fonte, a Full-Stack Developer and Data Mining Specialist in the Philippines specializing in React, Laravel, ASP.NET Core, and Python.",
+  image = "/images/1.webp",
+  type = "website",
+  publishedDate,
+  keywords = [
+    "Klyde Dexter Fonte",
+    "Full-Stack Developer",
+    "Data Mining Specialist",
+    "Laravel Developer",
+    "React Developer",
+    ".NET Core Developer",
+    "Philippines Web Developer",
+    "Data Analyst"
+  ]
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://klyde-fonte-portfolio.vercel.app");
+const siteUrl = Astro.site ? Astro.site.origin : "https://klyde-fonte-portfolio.vercel.app";
+const canonicalURL = new URL(Astro.url.pathname, siteUrl);
+const imageUrl = new URL(image, siteUrl).toString();
 ---
 
 <!doctype html>
@@ -23,33 +40,44 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://klyde-fo
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="keywords" content={keywords.join(", ")} />
     <meta name="author" content="Klyde Dexter Fonte" />
+    <meta name="theme-color" content="#4f46e5" />
     <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:site_name" content="Klyde Dexter Fonte Portfolio" />
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:image:alt" content={title} />
+    <meta property="og:locale" content="en_US" />
+    {publishedDate && <meta property="article:published_time" content={publishedDate} />}
+    {publishedDate && <meta property="article:author" content="Klyde Dexter Fonte" />}
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
+    <meta name="twitter:image:alt" content={title} />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={canonicalURL} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={new URL(image, canonicalURL)} />
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={canonicalURL} />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={new URL(image, canonicalURL)} />
-
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+
+    <!-- JSON-LD Structured Data Slot -->
+    <slot name="json-ld" />
   </head>
   <body class="bg-slate-50 text-slate-900 antialiased selection:bg-slate-900 selection:text-white min-h-screen flex flex-col justify-between">
     <Navbar />

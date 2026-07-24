@@ -19,7 +19,10 @@ Personal developer portfolio built with [Astro 7](https://astro.build) and [Tail
   - Direct PDF download and tab view actions (`public/klyde-fonte-resume.pdf`).
 - **📱 Responsive Mobile Navigation**: Sticky glassmorphism navbar with a smooth mobile hamburger drawer menu.
 - **✉️ Asynchronous Contact Form**: Formspree integration with client-side `fetch()` submission, loading spinner button state, and inline success/error alert banners.
-- **🌐 SEO & Social Sharing**: Full Open Graph tags, Twitter Card metadata, canonical links, and `public/robots.txt`.
+- **🌐 Comprehensive SEO & Structured Data (JSON-LD)**:
+  - Automated XML sitemap compilation (`sitemap-index.xml`) via `@astrojs/sitemap`.
+  - Schema.org JSON-LD structured data (`Person`, `WebSite`, `SoftwareApplication`, `BreadcrumbList`) for rich Google search snippets.
+  - Enhanced Open Graph tags, Twitter Card metadata, canonical URLs, keywords, and theme-color configurations in `Layout.astro`.
 
 ---
 
@@ -30,11 +33,15 @@ klyde-fonte-portfolio/
 ├── public/
 │   ├── favicon.ico
 │   ├── favicon.svg
-│   ├── robots.txt
+│   ├── robots.txt                   # Crawler rules referencing sitemap-index.xml
 │   ├── klyde-fonte-resume.pdf       # Downloadable & Viewable Resume PDF
 │   └── images/                      # Project, headshot, & certificate images
 ├── src/
 │   ├── components/                  # Reusable UI components
+│   │   ├── SEO/                     # JSON-LD Schema.org components
+│   │   │   ├── PersonSchema.astro   # Person & WebSite JSON-LD schemas
+│   │   │   ├── ProjectSchema.astro  # SoftwareApplication & Breadcrumb schemas
+│   │   │   └── BreadcrumbSchema.astro # Navigation BreadcrumbList schema
 │   │   ├── Navbar.astro             # Sticky header with mobile drawer
 │   │   ├── Footer.astro             # Footer with copyright & social links
 │   │   ├── Hero.astro               # Hero banner with status indicator
@@ -48,7 +55,7 @@ klyde-fonte-portfolio/
 │   │   └── certifications/          # Certification JSON entries (*.json)
 │   ├── content.config.ts            # Astro 7 Content Collections config
 │   ├── layouts/
-│   │   └── Layout.astro             # Global HTML layout, Google Fonts, & OG metadata
+│   │   └── Layout.astro             # Global HTML layout, Google Fonts, & OG/SEO metadata
 │   ├── pages/                       # File-based routes
 │   │   ├── index.astro              # Home page with project filter & credentials
 │   │   ├── about.astro              # About page with skills matrix & timeline
@@ -57,7 +64,7 @@ klyde-fonte-portfolio/
 │   │       └── [...slug].astro      # Dynamic project case study pages
 │   └── styles/
 │       └── global.css               # Tailwind v4 import & theme definitions
-├── astro.config.mjs                 # Astro configuration (@astrojs/vercel adapter)
+├── astro.config.mjs                 # Astro configuration (site URL, @astrojs/sitemap & @astrojs/vercel)
 └── package.json
 ```
 

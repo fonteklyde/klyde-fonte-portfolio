@@ -5,6 +5,7 @@ import Hero from "../components/Hero.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import CertificationCard from "../components/CertificationCard.astro";
 import ContactForm from "../components/ContactForm.astro";
+import PersonSchema from "../components/SEO/PersonSchema.astro";
 
 const projects = await getCollection("projects");
 projects.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
@@ -13,7 +14,8 @@ const certifications = await getCollection("certifications");
 certifications.sort((a, b) => a.data.order - b.data.order);
 ---
 
-<Layout title="Klyde Dexter Fonte — Full-Stack Developer Portfolio">
+<Layout title="Klyde Dexter Fonte — Full-Stack Developer & Data Mining Specialist">
+  <PersonSchema slot="json-ld" />
   <div data-animate class="opacity-0">
     <Hero />
   </div>

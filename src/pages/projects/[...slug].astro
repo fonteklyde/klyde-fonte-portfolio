@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
+import ProjectSchema from "../../components/SEO/ProjectSchema.astro";
 
 export async function getStaticPaths() {
   const projects = await getCollection("projects");
@@ -25,9 +26,29 @@ const formattedDate = new Date(data.date).toLocaleDateString("en-US", {
   year: "numeric",
   month: "long",
 });
+
+const siteUrl = Astro.site ? Astro.site.origin : "https://klyde-fonte-portfolio.vercel.app";
+const projectUrl = `${siteUrl}/projects/${project.id}`;
 ---
 
-<Layout title={`${data.title} — Case Study | Klyde Dexter Fonte`} description={data.description} image={data.image}>
+<Layout
+  title={`${data.title} — Case Study | Klyde Dexter Fonte`}
+  description={data.description}
+  image={data.image}
+  type="article"
+  publishedDate={data.date.toISOString()}
+  keywords={[data.title, ...data.tags, "Klyde Dexter Fonte", "Case Study"]}
+>
+  <ProjectSchema
+    slot="json-ld"
+    title={data.title}
+    description={data.description}
+    image={data.image}
+    url={projectUrl}
+    tags={data.tags}
+    datePublished={data.date.toISOString()}
+  />
+
   <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
     <!-- Breadcrumb back link -->
     <a

@@ -1,0 +1,32 @@
+---
+export interface Props {
+  pageName: string;
+  pageUrl: string;
+}
+
+const { pageName, pageUrl } = Astro.props;
+
+const siteUrl = Astro.site ? Astro.site.origin : "https://klyde-fonte-portfolio.vercel.app";
+const fullPageUrl = new URL(pageUrl, siteUrl).toString();
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": siteUrl
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": pageName,
+      "item": fullPageUrl
+    }
+  ]
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />

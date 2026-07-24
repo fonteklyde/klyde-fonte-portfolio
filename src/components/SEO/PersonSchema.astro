@@ -1,0 +1,49 @@
+---
+const siteUrl = Astro.site ? Astro.site.origin : "https://klyde-fonte-portfolio.vercel.app";
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": `${siteUrl}/#person`,
+  "name": "Klyde Dexter Fonte",
+  "givenName": "Klyde Dexter",
+  "familyName": "Fonte",
+  "jobTitle": "Full-Stack Developer & Data Mining Specialist",
+  "url": siteUrl,
+  "sameAs": [
+    "https://github.com/fonteklyde",
+    "https://www.linkedin.com/in/klyde-dexter-fonte-2630292b7/"
+  ],
+  "knowsAbout": [
+    "Web Development",
+    "Full-Stack Development",
+    "Laravel",
+    "React.js",
+    "ASP.NET Core",
+    "Python",
+    "R",
+    "Data Mining",
+    "Predictive Modeling",
+    "PostgreSQL",
+    "MySQL",
+    "Inertia.js",
+    "Tailwind CSS"
+  ],
+  "description": "Full-Stack Developer and Data Mining Specialist in the Philippines specializing in scalable web applications, React, Laravel, ASP.NET Core, and predictive data modeling."
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${siteUrl}/#website`,
+  "url": siteUrl,
+  "name": "Klyde Dexter Fonte Portfolio",
+  "description": "Portfolio of Klyde Dexter Fonte - Full-Stack Developer & Data Mining Specialist",
+  "publisher": {
+    "@id": `${siteUrl}/#person`
+  }
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
