@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://klyde-fonte-portfolio.vercel.app/sitemap-index.xml

@@ -1,4 +1,4 @@
-# Klyde Dexter Fonte — Software Engiiner | Data Scientist | Data Analyst Portfolio
+# Klyde Dexter Fonte — Software Engineer | Data Scientist | Data Analyst Portfolio
 
 Personal developer portfolio built with [Astro 7](https://astro.build) and [Tailwind CSS v4](https://tailwindcss.com), showcasing expertise in full-stack web development (Laravel, React, .NET Core) and data mining / predictive analytics (Python, R). Features interactive project filtering, detailed case studies, content collections, and an embedded resume viewer.
 
