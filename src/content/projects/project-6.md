@@ -15,6 +15,7 @@ gallery:
     - "/images/conf-matrix-xg.png"
     - "/images/conf-matrix-gpm.png"
 tags: ["Python", "R", "Machine Learning", "Exploratory"]
+githubUrl: "https://github.com/fonteklyde/water-potability-prediction"
 date: "2025-03-10"
 featured: true
 ---
