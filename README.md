@@ -1,6 +1,6 @@
-# Klyde Dexter Fonte — Software Engineer | Data Scientist | Data Analyst Portfolio
+# Klyde Dexter Fonte — Data Analyst Portfolio
 
-Personal developer portfolio built with [Astro 7](https://astro.build) and [Tailwind CSS v4](https://tailwindcss.com), showcasing expertise in full-stack web development (Laravel, React, .NET Core) and data mining / predictive analytics (Python, R). Features interactive project filtering, detailed case studies, content collections, and an embedded resume viewer.
+Personal portfolio built with [Astro 7](https://astro.build) and [Tailwind CSS v4](https://tailwindcss.com), showcasing expertise in data analytics, statistical modeling, exploratory data analysis (EDA), data visualization (Tableau, Looker), spreadsheets (Excel, Google Sheets), and machine learning (Python, R, SQL). Features detailed data case studies, content collections, and an embedded resume viewer.
 
 ---
 
@@ -8,11 +8,11 @@ Personal developer portfolio built with [Astro 7](https://astro.build) and [Tail
 
 - **⚡ Fast Static Site Generation**: Built with Astro 7 static output for ultra-fast page load speeds and SEO efficiency.
 - **🎨 Modern Design System**: Tailwind CSS v4 styling with `@tailwindcss/vite`, custom `@theme` fonts (*Plus Jakarta Sans* headings & *Inter* body), ambient radial glows, and responsive layout primitives.
+- **📊 Data Analytics Focus**: Highlighted skills categorized across Technical skills (SQL, Google Sheets, Excel, Pivot table, Data visualization with Tableau & Looker, Python, R, Machine learning, Data preparation), Analytical skills, Communication skills, and Industry-specific skills.
 - **📁 Content Collections**:
-  - **Projects (`src/content/projects/`)**: Detailed Markdown case studies with key features, architecture decisions, tag metadata, and screenshot galleries.
+  - **Projects (`src/content/projects/`)**: Detailed Markdown data case studies (Water Potability Prediction & DevPath) with key features, technical architecture decisions, tag metadata, and screenshot galleries.
   - **Education (`src/content/education/`)**: Structured JSON data files for academic degrees, institutions, and key focus areas.
   - **Certifications (`src/content/certifications/`)**: Structured JSON entries for professional credentials with badge images, issue dates, and verification links.
-- **🔍 Interactive Project Tag Filtering**: Filter projects instantly on the home page by tech stack (Laravel, React, ASP.NET, Python, R, Machine Learning) without page reloads.
 - **📄 Viewable & Downloadable Resume (`/resume`)**:
   - Embedded responsive PDF viewer frame.
   - Structured, accessible Web Resume view for mobile screens and screen readers.
