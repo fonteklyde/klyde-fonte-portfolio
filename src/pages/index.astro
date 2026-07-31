@@ -36,7 +36,9 @@ certifications.sort((a, b) => a.data.order - b.data.order);
         Featured Projects
       </h2>
       <p class="mt-3 text-base sm:text-lg text-slate-600">
-        A selection of data analysis, predictive modeling, and intelligent data systems highlighting data processing, statistical modeling, and analytical insights.
+        A selection of data analysis, predictive modeling, and intelligent data
+        systems highlighting data processing, statistical modeling, and
+        analytical insights.
       </p>
     </div>
 
@@ -58,13 +60,20 @@ certifications.sort((a, b) => a.data.order - b.data.order);
   <!-- Certifications Highlight Section -->
   <section class="bg-white py-16 md:py-24 border-t border-slate-200/60">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div data-animate class="opacity-0 flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+      <div
+        data-animate
+        class="opacity-0 flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10"
+      >
         <div>
-          <span class="text-xs font-bold uppercase tracking-widest text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full border border-indigo-100">
+          <span
+            class="text-xs font-bold uppercase tracking-widest text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full border border-indigo-100"
+          >
             Credentials
           </span>
-          <h2 class="mt-3 text-3xl font-extrabold text-slate-900 tracking-tight">
-            Certifications & Technical Training
+          <h2
+            class="mt-3 text-3xl font-extrabold text-slate-900 tracking-tight"
+          >
+            Certifications & Seminars
           </h2>
         </div>
         <a
@@ -75,10 +84,15 @@ certifications.sort((a, b) => a.data.order - b.data.order);
         </a>
       </div>
 
-      <div data-animate class="opacity-0 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {certifications.map((cert) => (
-          <CertificationCard certification={cert} />
-        ))}
+      <div
+        data-animate
+        class="opacity-0 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+      >
+        {
+          certifications.map((cert) => (
+            <CertificationCard certification={cert} />
+          ))
+        }
       </div>
     </div>
   </section>

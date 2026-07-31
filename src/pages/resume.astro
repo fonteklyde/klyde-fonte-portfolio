@@ -6,8 +6,8 @@ const resumePath = "/klyde-fonte-resume.pdf";
 ---
 
 <Layout
-  title="Resume & CV — Klyde Dexter Fonte | Data Analyst & Data Scientist"
-  description="View and download the professional resume and CV of Klyde Dexter Fonte, Data Analyst and Data Scientist in the Philippines."
+  title="Resume & CV — Klyde Dexter Fonte | Data Analyst"
+  description="View and download the professional resume and CV of Klyde Dexter Fonte, Data Analyst in the Philippines."
 >
   <BreadcrumbSchema pageName="Resume" pageUrl="/resume" slot="json-ld" />
 
@@ -29,7 +29,7 @@ const resumePath = "/klyde-fonte-resume.pdf";
           Klyde Dexter Fonte
         </h1>
         <p class="text-sm font-semibold text-slate-600 mt-1">
-          Data Analyst • Data Scientist • Philippines
+          Data Analyst • Philippines
         </p>
       </div>
 
@@ -85,7 +85,9 @@ const resumePath = "/klyde-fonte-resume.pdf";
         <h2 class="text-lg font-bold text-slate-900 flex items-center gap-2">
           <span>📄</span> PDF Preview
         </h2>
-        <span class="text-xs text-slate-400">Scroll inside frame to view all pages</span>
+        <span class="text-xs text-slate-400"
+          >Scroll inside frame to view all pages</span
+        >
       </div>
       <div
         class="w-full h-[800px] rounded-2xl overflow-hidden border border-slate-200 shadow-md bg-slate-800"
@@ -93,8 +95,7 @@ const resumePath = "/klyde-fonte-resume.pdf";
         <iframe
           src={`${resumePath}#toolbar=0`}
           class="w-full h-full border-none"
-          title="Klyde Dexter Fonte Resume PDF"
-        />
+          title="Klyde Dexter Fonte Resume PDF"></iframe>
       </div>
     </div>
   </div>
