@@ -1,6 +1,6 @@
 # Klyde Dexter Fonte — Data Analyst Portfolio
 
-Personal portfolio built with [Astro 7](https://astro.build) and [Tailwind CSS v4](https://tailwindcss.com), showcasing expertise in data analytics, statistical modeling, exploratory data analysis (EDA), data visualization (Tableau, Looker), spreadsheets (Excel, Google Sheets), and machine learning (Python, R, SQL). Features detailed data case studies, content collections, and an embedded resume viewer.
+Personal portfolio built with [Astro 7](https://astro.build) and [Tailwind CSS v4](https://tailwindcss.com), showcasing expertise in data analytics, statistical modeling, exploratory data analysis (EDA), data visualization (Tableau, Looker), spreadsheets (Excel, Google Sheets), and machine learning (Python, R, SQL). Features detailed data case studies (including a 1.2M record Casino Player Analysis), content collections, and an embedded resume viewer.
 
 ---
 
@@ -8,9 +8,9 @@ Personal portfolio built with [Astro 7](https://astro.build) and [Tailwind CSS v
 
 - **⚡ Fast Static Site Generation**: Built with Astro 7 static output for ultra-fast page load speeds and SEO efficiency.
 - **🎨 Modern Design System**: Tailwind CSS v4 styling with `@tailwindcss/vite`, custom `@theme` fonts (*Plus Jakarta Sans* headings & *Inter* body), ambient radial glows, and responsive layout primitives.
-- **📊 Data Analytics Focus**: Highlighted skills categorized across Technical skills (SQL, Google Sheets, Excel, Pivot table, Data visualization with Tableau & Looker, Python, R, Machine learning, Data preparation), Analytical skills, Communication skills, and Industry-specific skills.
+- **📊 Data Analytics Focus**: Highlighted skills categorized across Technical skills (SQL, Google Sheets, Excel, Pivot tables, Data visualization with Tableau & Looker, Python, R, Machine learning, Data preparation), Analytical skills (Critical thinking, Problem-solving, Attention to detail), Communication skills, and Industry-specific skills.
 - **📁 Content Collections**:
-  - **Projects (`src/content/projects/`)**: Detailed Markdown data case studies (Water Potability Prediction & DevPath) with key features, technical architecture decisions, tag metadata, and screenshot galleries.
+  - **Projects (`src/content/projects/`)**: Detailed Markdown data case studies (*Long-Term Casino Player Analysis*, *Water Potability Prediction & Analysis*, and *DevPath*) with key analytical insights, statistical findings, technical architecture decisions, tag metadata, and visualization galleries.
   - **Education (`src/content/education/`)**: Structured JSON data files for academic degrees, institutions, and key focus areas.
   - **Certifications (`src/content/certifications/`)**: Structured JSON entries for professional credentials with badge images, issue dates, and verification links.
 - **📄 Viewable & Downloadable Resume (`/resume`)**:
@@ -35,7 +35,7 @@ klyde-fonte-portfolio/
 │   ├── favicon.svg
 │   ├── robots.txt                   # Crawler rules referencing sitemap-index.xml
 │   ├── klyde-fonte-resume.pdf       # Downloadable & Viewable Resume PDF
-│   └── images/                      # Project, headshot, & certificate images
+│   └── images/                      # Project screenshots, certificate badges, & casino case study visualizations
 ├── src/
 │   ├── components/                  # Reusable UI components
 │   │   ├── SEO/                     # JSON-LD Schema.org components
