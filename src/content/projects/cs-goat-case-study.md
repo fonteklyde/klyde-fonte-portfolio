@@ -11,7 +11,8 @@ gallery:
     - "/images/cs-goat-case-study/ranking_comparison_across_weight_scenarios.png"
     - "/images/cs-goat-case-study/most_top_20_selections_without_ever_being_1.png"
 tags: ["Esports Analytics", "SQL", "Tableau", "Spreadsheets"]
-githubUrl: "https://github.com/fonteklyde"
+liveUrl: "https://public.tableau.com/app/profile/klyde.dexter.fonte/viz/CounterStrikeGOATAnalysis/ExecutiveOverview#1"
+githubUrl: "https://github.com/fonteklyde/CS_GOAT_Case_Study"
 date: "2026-08-09"
 featured: true
 ---
